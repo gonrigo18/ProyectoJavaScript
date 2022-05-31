@@ -81,7 +81,7 @@ function operar(){
     }
     /*fin operacion retirar dinero*/
     /*inicio operacion consultar saldo*/
-    else if ((operacion == "consultar saldos") || (operacion == "3" )){
+    else if ((operacion == "consultar saldo") || (operacion == "3" )){
         console.log("Su saldo es: " + saldo + " pesos");
         seguirOperando();
     }
@@ -120,6 +120,13 @@ function operar(){
             alert("Opcion incorrecta");
             comprar();
         }
+    }
+    else if ((operacion == "cerrar sesion") || (operacion == "5")) {
+        alert("Gracias por elegirnos!!!")
+    }
+    else{
+        alert("Opcion incorrecta");
+            operar();
     }
 }
 /*fin fuincion repetir */
