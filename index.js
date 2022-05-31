@@ -9,4 +9,4 @@ while(userpass != "pass"){
 }
 /* Si validacion de contraseña es correcta*/
 alert("BIENVENIDO!!!");
-operar();
+operar()
