@@ -129,7 +129,7 @@ function operar(){
             operar();
     }
 }
-/*fin fuincion repetir */
+/*fin funcion repetir */
 
 /*
 
