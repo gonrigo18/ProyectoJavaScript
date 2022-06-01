@@ -94,7 +94,7 @@ function operar(){
             monto = parseInt(prompt("Cuantos pesos quieres intercambiar por Bitcoin? "));
             alert("Usted compró: " + monto/btc + " BTC");
             saldobtc = saldobtc + (monto / btc);
-            alert("Su saldo en Bitcoin es de: " + saldobtc);
+            console.log("Su saldo en Bitcoin es de: " + saldobtc);
             seguirComprando();
         }
         /* Comprar ethereum */
@@ -102,7 +102,7 @@ function operar(){
             monto = parseInt(prompt("Cuantos pesos quieres intercambiar por Ethereum? "));
             alert("Usted compró: " + monto/eth + " ETH");
             saldoeth = saldoeth + (monto / eth);
-            alert("Su saldo en Ethereum es de: " + saldoeth);
+            console.log("Su saldo en Ethereum es de: " + saldoeth);
             seguirComprando();
         }
         /* comprar usdt */
@@ -110,7 +110,7 @@ function operar(){
             monto = parseInt(prompt("Cuantos pesos quieres intercambiar por Usdt? "));
             alert("Usted compró: " + monto/usdt + " USDT");
             saldousdt = saldousdt + (monto / usdt);
-            alert("Su saldo en USDT es de: " + saldousdt);
+            console.log("Su saldo en USDT es de: " + saldousdt);
             seguirComprando();
         }
         else if ((crypto == "4") || (crypto == "volver")) {
