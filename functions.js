@@ -68,7 +68,7 @@ function operar(){
     if (operacion == "ingresar dinero" || operacion == "1"){
         monto = parseInt(prompt("Cuanto dinero desea ingresar?"));
         saldo = saldo + monto;
-        console.log("Usted ingreso: " + monto + " pesos");
+        alert("Usted ingreso: " + monto + " pesos");
         seguirOperando();
     }
     /* fin operacion ingresar dinero*/
@@ -76,13 +76,13 @@ function operar(){
     else if((operacion == "retirar dinero") || (operacion == "2")) {
         monto = parseInt(prompt("Cuanto dinero desea retirar?"));
         saldo = saldo - monto;
-        console.log("Usted retiró: " + monto + " pesos");
+        alert("Usted retiró: " + monto + " pesos");
         seguirOperando();
     }
     /*fin operacion retirar dinero*/
     /*inicio operacion consultar saldo*/
     else if ((operacion == "consultar saldo") || (operacion == "3" )){
-        console.log("Su saldo es: " + saldo + " pesos");
+        alert("Su saldo es: " + saldo + " pesos");
         seguirOperando();
     }
     /* fin operacion consultar saldo*/
@@ -94,7 +94,7 @@ function operar(){
             monto = parseInt(prompt("Cuantos pesos quieres intercambiar por Bitcoin? "));
             alert("Usted compró: " + monto/btc + " BTC");
             saldobtc = saldobtc + (monto / btc);
-            console.log("Su saldo en Bitcoin es de: " + saldobtc);
+            alert("Su saldo en Bitcoin es de: " + saldobtc);
             seguirComprando();
         }
         /* Comprar ethereum */
@@ -102,7 +102,7 @@ function operar(){
             monto = parseInt(prompt("Cuantos pesos quieres intercambiar por Ethereum? "));
             alert("Usted compró: " + monto/eth + " ETH");
             saldoeth = saldoeth + (monto / eth);
-            console.log("Su saldo en Ethereum es de: " + saldoeth);
+            alert("Su saldo en Ethereum es de: " + saldoeth);
             seguirComprando();
         }
         /* comprar usdt */
@@ -110,7 +110,7 @@ function operar(){
             monto = parseInt(prompt("Cuantos pesos quieres intercambiar por Usdt? "));
             alert("Usted compró: " + monto/usdt + " USDT");
             saldousdt = saldousdt + (monto / usdt);
-            console.log("Su saldo en USDT es de: " + saldousdt);
+            alert("Su saldo en USDT es de: " + saldousdt);
             seguirComprando();
         }
         else if ((crypto == "4") || (crypto == "volver")) {
