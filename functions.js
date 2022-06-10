@@ -3,6 +3,17 @@
     INICIO DECLARACION DE FUNCIONES
 
 */
+/* inicio calse constructora de cuentas*/
+
+class Cuenta{
+    constructor(usuario, contraseña) {
+        this.usuario  = usuario.toLowerCase();
+        this.contraseña = contraseña.toLowerCase();
+    }
+}
+const cuenta1 = new Cuenta("gonzalo", "pass");
+
+/* fin clase constructora cuentas*/
 
 /* inicio funcion seguir operando*/
 function seguirOperando(){
@@ -63,7 +74,7 @@ function seguirComprando(){
 /* inicio funcion repetir*/
 function operar(){
 /*que operacion desea realizar*/
-    operacion = prompt("Que desea hacer??: \n \n 1 - Ingresar dinero. \n 2 - Retirar dinero. \n 3 - Consultar saldos. \n 4 - Comprar cryptomoneda. \n 5 - Cerrar sesión ");
+    operacion = prompt("Que desea hacer??: \n \n 1 - Ingresar dinero. \n 2 - Retirar dinero. \n 3 - Consultar saldos. \n 4 - Comprar cryptomoneda. \n 5 - Invertir \n 6 - Cerrar sesión ");
     /*inicio operacion ingresar dinero*/
     if (operacion == "ingresar dinero" || operacion == "1"){
         monto = parseInt(prompt("Cuanto dinero desea ingresar?"));
@@ -121,7 +132,11 @@ function operar(){
             comprar();
         }
     }
-    else if ((operacion == "cerrar sesion") || (operacion == "5")) {
+    else if ((operacion == "invertir") || (operacion == "5")) {
+        invertir();
+
+    }
+    else if ((operacion == "cerrar sesion") || (operacion == "6")) {
         alert("Gracias por elegirnos!!!")
     }
     else{
@@ -130,6 +145,89 @@ function operar(){
     }
 }
 /*fin funcion repetir */
+
+/* inicio array de funciones */
+function invertir(){
+    class CryptoInvertida{
+        constructor(moneda, cantidad) {
+            this.moneda  = moneda.toLowerCase();
+            this.cantidad = parseInt(cantidad);
+        }
+    }
+    const cryptoList = [];
+    let enter = prompt("Que criptomoneda desea invertir? \n 1 - Bitcoin(BTC). \n 2 - Ethereum(ETH). \n 3 - USDT. \n 4 - Consultar inversiones. \n 5 - Volver al menu anterior." );
+    if((enter == "1") || (enter == "bitcoin" || (enter == "btc"))){
+        let moneda1 = "BTC";
+        let monto1 = prompt("Cuantos $ desea invertir en Bitcoin? ");
+        const cryptoInvertida1 = new CryptoInvertida(moneda1, monto1);
+        console.log(cryptoInvertida1);
+        alert("Usted compro $ " + cryptoInvertida1.cantidad + " en " + cryptoInvertida1.moneda);
+        cryptoList.push(cryptoInvertida1);
+        for (const moneda of cryptoList){
+            alert( moneda.moneda + moneda.cantidad);
+        }
+        enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
+        if ((enter == "1") || (enter == "si")){
+            invertir();
+        }
+        else {
+            operar();
+        }
+    }
+    /* Comprar ethereum */
+    else if ((enter == "2") || (enter == "ethereum" || (enter == "eth"))){
+        let moneda2 = "ETH";
+        let monto2 = prompt("Cuantos $ desea invertir en Ethereum? ");
+        const cryptoInvertida2 = new CryptoInvertida(moneda2, monto2);
+        alert("Usted compro $ " + cryptoInvertida2.cantidad + " en " + cryptoInvertida2.moneda);
+        cryptoList.push(cryptoInvertida2);
+        for (const moneda of cryptoList){
+            alert( moneda.moneda + moneda.cantidad);
+        }
+        enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
+        if ((enter == "1") || (enter == "si")){
+            invertir();
+        }
+        else {
+            operar();
+        }
+    }
+    /* comprar usdt */
+    else if ((enter == "3") || (enter == "USDT" || (enter == "usdt"))){
+        let moneda3 = "USDT";
+        let monto3 = prompt("Cuantos $ desea invertir en USDT? ");
+        const cryptoInvertida3 = new CryptoInvertida(moneda3, monto3);
+        alert("Usted compro $ " + cryptoInvertida3.cantidad + " en " + cryptoInvertida3.moneda);
+        cryptoList.push(cryptoInvertida3);
+        for (const moneda of cryptoList){
+            alert( moneda.moneda + moneda.cantidad);
+        }
+        enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
+        if ((enter == "1") || (enter == "si")){
+            invertir();
+        }
+        else {
+            operar();
+        }
+    }
+    else if ((enter == "4") || (enter == "consultar")){
+        alert("USTED ESTA INVIRTIENDO EN: .....")
+        enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
+        if ((enter == "1") || (enter == "si")){
+            invertir();
+        }
+        else {
+            operar();
+        }
+    }else if ((enter == "5") || (enter == "Volver")){
+        operar();
+    }
+    else{
+        alert("Opción incorrecta, vuelva a ingresar una opción valida.")
+        invertir();
+    }
+}
+/* fin array de funciones*/
 
 /*
 
