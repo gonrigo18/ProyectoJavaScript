@@ -229,7 +229,7 @@ function invertir(){
         operar();
     }
     else{
-        alert("Opción incorrecta, vuelva a ingresar una opción valida.")
+        alert("Opción incorrecta, ingresá una opción valida.")
         invertir();
     }
 }
