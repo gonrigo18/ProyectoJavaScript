@@ -15,6 +15,19 @@ const cuenta1 = new Cuenta("gonzalo", "pass");
 
 /* fin clase constructora cuentas*/
 
+function validation(cryptoInvertida1){
+    let repeat=false;
+    cryptoList.forEach(element => {
+        if (element.moneda == cryptoInvertida1.moneda){
+            element.cantidad += cryptoInvertida1.cantidad;
+            repeat = true;
+        }
+    });
+    if(!repeat){
+        cryptoList.push(cryptoInvertida1);
+    }
+}
+
 /* inicio funcion seguir operando*/
 function seguirOperando(){
     operacion = prompt("Desea seguir operando?: \n 1 - Si \n 2 - No");
@@ -155,17 +168,15 @@ function invertir(){
         }
     }
     let enter = prompt("Que criptomoneda desea invertir? \n 1 - Bitcoin(BTC). \n 2 - Ethereum(ETH). \n 3 - USDT. \n 4 - Consultar inversiones. \n 5 - Volver al menu anterior." );
+    /* invertir btc */
     if((enter == "1") || (enter == "bitcoin" || (enter == "btc"))){
         let moneda1 = "BTC";
         let monto1 = prompt("Cuantos $ desea invertir en Bitcoin? ");
         const cryptoInvertida1 = new CryptoInvertida(moneda1, monto1);
         console.log(cryptoInvertida1);
-        alert("Usted compro $ " + cryptoInvertida1.cantidad + " en " + cryptoInvertida1.moneda);
-        cryptoList.push(cryptoInvertida1);
-        let cantTotal1 = cryptoInvertida1.cantidad;
-        console.log(cantTotal1);
+        validation(cryptoInvertida1);
         saldoTotal1 = saldoTotal1 +  cryptoInvertida1.cantidad;
-        alert("Total de " + cryptoInvertida1.moneda + ": " + saldoTotal1 )
+        alert("Usted compro $ " + cryptoInvertida1.cantidad + " y tiene un total de " + (saldoTotal1/btc) + " BTC" )
         enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
         if ((enter == "1") || (enter == "si")){
             invertir();
@@ -174,17 +185,14 @@ function invertir(){
             operar();
         }
     }
-    /* Comprar ethereum */
+    /* invertir ethereum */
     else if ((enter == "2") || (enter == "ethereum" || (enter == "eth"))){
         let moneda2 = "ETH";
         let monto2 = prompt("Cuantos $ desea invertir en Ethereum? ");
         const cryptoInvertida2 = new CryptoInvertida(moneda2, monto2);
-        alert("Usted compro $ " + cryptoInvertida2.cantidad + " en " + cryptoInvertida2.moneda);
-        cryptoList.push(cryptoInvertida2);
-        let cantTotal2 = cryptoInvertida2.cantidad;
-        console.log(cantTotal2);
+        validation(cryptoInvertida2);
         saldoTotal2 = saldoTotal2 +  cryptoInvertida2.cantidad;
-        alert("Total de " + cryptoInvertida2.moneda + ": " + saldoTotal2 )
+        alert("Usted compro $ " + cryptoInvertida2.cantidad + " y tiene un total de " + (saldoTotal2/eth) + " ETH" )
         enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
         if ((enter == "1") || (enter == "si")){
             invertir();
@@ -193,17 +201,14 @@ function invertir(){
             operar();
         }
     }
-    /* comprar usdt */
+    /* invertir usdt */
     else if ((enter == "3") || (enter == "USDT" || (enter == "usdt"))){
         let moneda3 = "USDT";
         let monto3 = prompt("Cuantos $ desea invertir en USDT? ");
         const cryptoInvertida3 = new CryptoInvertida(moneda3, monto3);
-        alert("Usted compro $ " + cryptoInvertida3.cantidad + " en " + cryptoInvertida3.moneda);
-        cryptoList.push(cryptoInvertida3);
-        let cantTotal3 = cryptoInvertida3.cantidad;
-        console.log(cantTotal3);
+        validation(cryptoInvertida3);
         saldoTotal3 = saldoTotal3 +  cryptoInvertida3.cantidad;
-        alert("Total de " + cryptoInvertida3.moneda + ": " + saldoTotal3 )
+        alert("Usted compro $ " + cryptoInvertida3.cantidad + " y tiene un total de " + (saldoTotal3/usdt) + " USDT" )
         enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
         if ((enter == "1") || (enter == "si")){
             invertir();
@@ -213,11 +218,7 @@ function invertir(){
         }
     }
     else if ((enter == "4") || (enter == "consultar")){
-        alert(cryptoList);
-        for (var i = 0; i < cryptoList.length; i++){
-        alert("Estas son sus inversiones: " + cryptoList[i]);
-        }
-        enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
+        console.table(cryptoList);
         if ((enter == "1") || (enter == "si")){
             invertir();
         }
