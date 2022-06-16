@@ -4,6 +4,7 @@ let crypto, userpass, operacion;
 let saldoTotal1 = 0, saldoTotal2 = 0; saldoTotal3 = 0;
 const cryptoList = [];
 alert("BIENVENIDO A NUESTRA APLICACIÓN");
+dom();
 userpass = prompt("Ingrese su contraseña: ").toLowerCase();
 /*Validacion de contraseña*/
 while(userpass != cuenta1.contraseña){
@@ -12,3 +13,4 @@ while(userpass != cuenta1.contraseña){
 /* Si validacion de contraseña es correcta*/
 alert("Hola!!!");
 operar()
+dom()

@@ -13,6 +13,14 @@ class Cuenta{
 }
 const cuenta1 = new Cuenta("gonzalo", "pass");
 
+/* funcion para insertar dom */
+function dom (){
+    let dom = cryptoList.map(function(bar){
+        return '<li>'+bar.moneda+' '+bar.cantidad+'</li>'
+    })
+    document.getElementById("nameTitle").innerHTML = dom;
+}
+
 /* fin clase constructora cuentas*/
 
 function validation(cryptoInvertida1){
