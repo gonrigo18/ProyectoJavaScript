@@ -15,10 +15,16 @@ const cuenta1 = new Cuenta("gonzalo", "pass");
 
 /* funcion para insertar dom */
 function dom (){
+    if (cryptoList.length === 0) {
+        document.getElementById("nameTitle").innerHTML = " Usted no esta invirtiendo";
+    }
+    else{
     let dom = cryptoList.map(function(bar){
         return '<li>'+bar.moneda+' '+bar.cantidad+'</li>'
     })
-    document.getElementById("nameTitle").innerHTML = dom;
+    document.getElementById("nameTitle").innerHTML = " Sus inversiones son: \n" + dom;
+    }
+    document.getElementById("cantTransacciones").innerHTML = " Cantidad de transacciones: \n" + transacciones;
 }
 
 /* fin clase constructora cuentas*/
@@ -43,6 +49,7 @@ function seguirOperando(){
         operar();
     }else{
         alert("Gracias por elegirnos!!");
+        dom();
     }
 }
 /* fin funcion seguir operando */
@@ -55,6 +62,7 @@ function comprar(){
             alert("Usted compró: " + monto/btc + " BTC");
             saldobtc = saldobtc + (monto / btc);
             console.log("Su saldo en Bitcoin es de: " + saldobtc);
+            transacciones++;
             seguirComprando();
         }
         /* Comprar ethereum */
@@ -63,6 +71,7 @@ function comprar(){
             alert("Usted compró: " + monto/eth + " ETH");
             saldoeth = saldoeth + (monto / eth);
             console.log("Su saldo en Ethereum es de: " + saldoeth);
+            transacciones++;
             seguirComprando();
         }
         /* comprar usdt */
@@ -71,6 +80,7 @@ function comprar(){
             alert("Usted compró: " + monto/usdt + " USDT");
             saldousdt = saldousdt + (monto / usdt);
             console.log("Su saldo en USDT es de: " + saldousdt);
+            transacciones++;
             seguirComprando();
         }
         else if ((crypto == "4") || (crypto == "volver" )) {
@@ -101,6 +111,8 @@ function operar(){
         monto = parseInt(prompt("Cuanto dinero desea ingresar?"));
         saldo = saldo + monto;
         alert("Usted ingreso: " + monto + " pesos");
+        transacciones++;
+        console.log(transacciones);
         seguirOperando();
     }
     /* fin operacion ingresar dinero*/
@@ -109,6 +121,7 @@ function operar(){
         monto = parseInt(prompt("Cuanto dinero desea retirar?"));
         saldo = saldo - monto;
         alert("Usted retiró: " + monto + " pesos");
+        transacciones++;
         seguirOperando();
     }
     /*fin operacion retirar dinero*/
@@ -127,6 +140,7 @@ function operar(){
             alert("Usted compró: " + monto/btc + " BTC");
             saldobtc = saldobtc + (monto / btc);
             console.log("Su saldo en Bitcoin es de: " + saldobtc);
+            transacciones++;
             seguirComprando();
         }
         /* Comprar ethereum */
@@ -135,6 +149,7 @@ function operar(){
             alert("Usted compró: " + monto/eth + " ETH");
             saldoeth = saldoeth + (monto / eth);
             console.log("Su saldo en Ethereum es de: " + saldoeth);
+            transacciones++;
             seguirComprando();
         }
         /* comprar usdt */
@@ -143,6 +158,7 @@ function operar(){
             alert("Usted compró: " + monto/usdt + " USDT");
             saldousdt = saldousdt + (monto / usdt);
             console.log("Su saldo en USDT es de: " + saldousdt);
+            transacciones++;
             seguirComprando();
         }
         else if ((crypto == "4") || (crypto == "volver")) {
@@ -159,6 +175,7 @@ function operar(){
     }
     else if ((operacion == "cerrar sesion") || (operacion == "6")) {
         alert("Gracias por elegirnos!!!")
+        dom()
     }
     else{
         alert("Opcion incorrecta");
@@ -184,7 +201,8 @@ function invertir(){
         console.log(cryptoInvertida1);
         validation(cryptoInvertida1);
         saldoTotal1 = saldoTotal1 +  cryptoInvertida1.cantidad;
-        alert("Usted compro $ " + cryptoInvertida1.cantidad + " y tiene un total de " + (saldoTotal1/btc) + " BTC" )
+        alert("Usted compro $ " + cryptoInvertida1.cantidad + " y tiene un total de " + (saldoTotal1/btc) + " BTC" );
+        transacciones++;
         enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
         if ((enter == "1") || (enter == "si")){
             invertir();
@@ -200,7 +218,8 @@ function invertir(){
         const cryptoInvertida2 = new CryptoInvertida(moneda2, monto2);
         validation(cryptoInvertida2);
         saldoTotal2 = saldoTotal2 +  cryptoInvertida2.cantidad;
-        alert("Usted compro $ " + cryptoInvertida2.cantidad + " y tiene un total de " + (saldoTotal2/eth) + " ETH" )
+        alert("Usted compro $ " + cryptoInvertida2.cantidad + " y tiene un total de " + (saldoTotal2/eth) + " ETH" );
+        transacciones++;
         enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
         if ((enter == "1") || (enter == "si")){
             invertir();
@@ -216,7 +235,8 @@ function invertir(){
         const cryptoInvertida3 = new CryptoInvertida(moneda3, monto3);
         validation(cryptoInvertida3);
         saldoTotal3 = saldoTotal3 +  cryptoInvertida3.cantidad;
-        alert("Usted compro $ " + cryptoInvertida3.cantidad + " y tiene un total de " + (saldoTotal3/usdt) + " USDT" )
+        alert("Usted compro $ " + cryptoInvertida3.cantidad + " y tiene un total de " + (saldoTotal3/usdt) + " USDT" );
+        transacciones++;
         enter = prompt("Desea seguir invirtiendo? \n 1 - Si. \n 2 - No. ");
         if ((enter == "1") || (enter == "si")){
             invertir();
@@ -227,6 +247,7 @@ function invertir(){
     }
     else if ((enter == "4") || (enter == "consultar")){
         console.table(cryptoList);
+        dom();
         if ((enter == "1") || (enter == "si")){
             invertir();
         }
