@@ -29,6 +29,7 @@ const container = document.querySelector(".container"),
             }else{
                 localStorage.setItem(registerAccount,registerPassword);
                 document.getElementById('mensaje').innerText = "Usted se registró correctamente";
+                newUser();
             }
 
         }else{
