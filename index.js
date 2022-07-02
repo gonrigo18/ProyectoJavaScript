@@ -45,7 +45,7 @@ const container = document.querySelector(".container"),
         if ((loginAccount !== "") && (loginPassword !== "")){
             if (loginAccount in localStorage){
                 if(loginPassword == localStorage.getItem(loginAccount)){
-                    location.href = "operar.html";
+                    location.href = "./operar.html";
                     // operar();
                 }else{
                     document.getElementById('mensaje1').innerText = "Contraseña incorrecta";
