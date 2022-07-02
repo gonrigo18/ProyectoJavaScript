@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/style.css" rel="stylesheet">
+    <script src="functions.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
             </div>
             <!-- Registration Form -->
             <div class="form signup">
-                <span class="title">Registration</span>
+                <span class="title">Registrarse</span>
                 <form action="#">
                     <div class="input-field">
                         <input id="registroUsuario" type="text" placeholder="Enter your user" required>
@@ -46,7 +47,7 @@
                         <i class="uil uil-lock icon"></i>
                     </div>
                     <div id="registrar" class="input-field button">
-                        <input type="button" value="Signup">
+                        <input type="button" value="Signup" onclick="newUser()">
                     </div>
                 </form>
                 <div class="login-signup">
@@ -60,9 +61,10 @@
     </div>
     <div>
         <h1 id="nameTitle"></h1>
+        <h2 id="operationSelected"></h1>
+        <h3 id="userInput"></h1>
         <h2 id="cantTransacciones"></h2>
     </div>
     <script src="index.js"></script>
-    <script src="functions.js"></script>
 </body>
 </html>

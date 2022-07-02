@@ -1,8 +1,8 @@
-let cryptomonedas = btc = 30498 , eth = 1883 , usdt = 1;
-let monto = 0, saldo = 0, saldobtc = 0, saldoeth = 0; saldousdt=0;
-let crypto, userpass, operacion;
-let saldoTotal1 = 0, saldoTotal2 = 0, saldoTotal3 = 0, transacciones = 0;
-const cryptoList = [];
+let  btc = 30498 , eth = 1883 , usdt = 0.99;
+let monto = 0, saldo = 0, saldoBtc = 0, saldoEth = 0; saldoUsdt=0, btcInvested = 0, ethInvested = 0, usdtInvested = 0;
+let transacciones = 0, totalAccount = 0;
+const id ="", usuario = "", contrasena ="";
+const userList = [];
 const container = document.querySelector(".container"),
     pwShowHide = document.querySelectorAll(".showHidePw"),
     pwFields = document.querySelectorAll(".password"),
@@ -43,8 +43,8 @@ const container = document.querySelector(".container"),
         if ((loginAccount !== "") && (loginPassword !== "")){
             if (loginAccount in localStorage){
                 if(loginPassword == localStorage.getItem(loginAccount)){
-                    alert("BIENVENIDO A NUESTRA APLICACIÓN!!!");
-                    operar();
+                    location.href = "operar.html";
+                    // operar();
                 }else{
                     document.getElementById('mensaje1').innerText = "Contraseña incorrecta";
                 }
@@ -55,3 +55,14 @@ const container = document.querySelector(".container"),
             document.getElementById('mensaje1').innerText = "Los campos usuario y contraseña no pueden estar vacios";
         }
 })
+function newUser(){
+class UsuariosRegistrados{
+    constructor(usuario, contrasena) {
+        this.usuario = document.getElementById('registroUsuario').value;
+        this.contrasena = document.getElementById('registroContraseña').value;
+    }
+}
+const newUser = new UsuariosRegistrados(id, usuario, contrasena);
+userList.push(newUser);
+console.table(userList);
+}
