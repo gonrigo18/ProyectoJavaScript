@@ -2,6 +2,7 @@ let  btc = 30498 , eth = 1883 , usdt = 0.99;
 let monto = 0, saldo = 0, saldoBtc = 0, saldoEth = 0; saldoUsdt=0, btcInvested = 0, ethInvested = 0, usdtInvested = 0;
 let transacciones = 0, totalAccount = 0;
 const id ="", usuario = "", contrasena ="";
+let registredUsers = 0;
 const userList = [];
 const container = document.querySelector(".container"),
     pwShowHide = document.querySelectorAll(".showHidePw"),
@@ -56,14 +57,3 @@ const container = document.querySelector(".container"),
             document.getElementById('mensaje1').innerText = "Los campos usuario y contraseña no pueden estar vacios";
         }
 })
-function newUser(){
-class UsuariosRegistrados{
-    constructor(usuario, contrasena) {
-        this.usuario = document.getElementById('registroUsuario').value;
-        this.contrasena = document.getElementById('registroContraseña').value;
-    }
-}
-const newUser = new UsuariosRegistrados(id, usuario, contrasena);
-userList.push(newUser);
-console.table(userList);
-}

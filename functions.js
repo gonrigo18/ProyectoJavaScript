@@ -127,6 +127,19 @@ function dom (){
     }
     document.getElementById("cantTransacciones").innerHTML = " Cantidad de transacciones: \n" + transacciones;
 }
+
+function newUser(){
+    class UsuariosRegistrados{
+        constructor(usuario, contrasena) {
+            this.usuario = document.getElementById('registroUsuario').value;
+            this.contrasena = document.getElementById('registroContraseña').value;
+        }
+    }
+    const newUser = new UsuariosRegistrados(id, usuario, contrasena);
+    userList.push(newUser);
+    registredUsers = userList.length ;
+    document.getElementById("usuariosregistrados").innerHTML= registredUsers;
+    }
     /* fin funcion dom */
 
 // function validation(newUser){
