@@ -17,10 +17,14 @@ function deposito() {
     document.getElementById("error").style.display='none';
 
     let valor= parseInt(document.getElementById("depositbtn").value);
-    if(!isNaN(valor))
+    if((!isNaN(valor)) && (" " !== valor))
     {
         totalAccount = totalAccount + valor;
         document.getElementById("total").innerHTML=" $ " + totalAccount;
+    }
+    else{
+        document.getElementById("error1").innerHTML="El campo no puede estar vacio";
+        document.getElementById("error1").style.display='block'
     }
 }
 
@@ -28,16 +32,20 @@ function retiro() {
     document.getElementById("error").style.display='none';
 
     let valor= parseInt(document.getElementById("withdrawbtn").value);
-    if(!isNaN(valor))
+    if((!isNaN(valor)) && (" " !== valor))
     {
         if(valor<=totalAccount)
         {
             totalAccount=totalAccount-valor;
             document.getElementById("total").innerHTML= " $  " + totalAccount;
-        }else{
+        }
+        else{
             document.getElementById("error").innerHTML="La cantidad no puede superar el saldo";
             document.getElementById("error").style.display='block';
         }
+    }else {
+        document.getElementById("error").innerHTML="El campo no puede estar vacio y no pueden ser letras";
+        document.getElementById("error").style.display='block';
     }
 }
 document.getElementById('buybtcbtn').onclick =  function(){buyBtc()}

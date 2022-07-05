@@ -239,6 +239,10 @@ form>div {
     display: none;color:Red;
     font-size: 13px;
 }
+#error1 {
+    display: none;color:Red;
+    font-size: 13px;
+}
 #errorbtc {
     display: none;color:Red;
     font-size: 13px;

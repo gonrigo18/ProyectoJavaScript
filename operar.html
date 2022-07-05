@@ -43,14 +43,15 @@
 			<div id="deposit" class="hide">
 				Ingresa el Depósito a Realizar <input type="text" id="depositbtn">
 				<input type="button" value="Enter" onclick="deposito()">
+                <div id="error1"></div>
 			</div>
 		<div>
 			<b>Retiro</b>
 			<input type="checkbox" value="1" onchange="javascript:showContent('withdraw',this)" />
-			<div id="error"></div>
 			<div id="withdraw" class="hide">
 				Ingresa el retiro a Realizar <input id="withdrawbtn"type="text">
 				<input type="button" value="Enter" onclick="retiro()">
+                <div id="error"></div>
 			</div>
 		</div>
 	</form>
