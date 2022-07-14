@@ -167,12 +167,17 @@ function newUser(){
     }
     /* fin funcion dom */
 
-    const lista = document.querySelector('#list')
 
     fetch('./data.json')
     .then ( (resp) => resp.json())
     .then( (data) => {
         console.log(data)
+        // document.getElementById("list").innerHTML= JSON.stringify(data);
+
+        var foo = data.map(function(bar){
+            return "     " + bar.moneda + " : " + "$" + bar.valor;
+        })
+        document.getElementById("list").innerHTML = foo;
     })
 
 /*

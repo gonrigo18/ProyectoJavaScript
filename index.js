@@ -1,4 +1,4 @@
-let  btc = 30498 , eth = 1883 , usdt = 0.99;
+let  btc = 19000 , eth = 1100 , usdt = 0.99;
 let monto = 0, saldo = 0, saldoBtc = 0, saldoEth = 0; saldoUsdt=0, btcInvested = 0, ethInvested = 0, usdtInvested = 0;
 let transacciones = 0, totalAccount = 0;
 const id ="", usuario = "", contrasena ="";
