@@ -48,7 +48,6 @@ function retiro() {
         document.getElementById("error").style.display='block';
     }
 }
-document.getElementById('buybtcbtn').onclick =  function(){buyBtc()}
 
     function buyBtc(){
         document.getElementById("error").style.display='none';
@@ -64,7 +63,6 @@ document.getElementById('buybtcbtn').onclick =  function(){buyBtc()}
         }
     }
 
-document.getElementById('buybtcbtn').onclick =  function(){buyEth()}
 function buyEth(){
     document.getElementById("error").style.display='none';
 
@@ -80,7 +78,6 @@ function buyEth(){
     }
 }
 
-document.getElementById('buybtcbtn').onclick =  function(){buyUsdt()}
 function buyUsdt(){
     document.getElementById("error").style.display='none';
 
@@ -170,18 +167,13 @@ function newUser(){
     }
     /* fin funcion dom */
 
-// function validation(newUser){
-//     let repeat=false;
-//     userList.forEach(element => {
-//         if (element.usuario == newUser.usuario){
-//             element.contrasena += newUser.contrasena;
-//             repeat = true;
-//         }
-//     });
-//     if(!repeat){
-//         userList.push(newUser);
-//     }
-// }
+    const lista = document.querySelector('#list')
+
+    fetch('./data.json')
+    .then ( (resp) => resp.json())
+    .then( (data) => {
+        console.log(data)
+    })
 
 /*
 

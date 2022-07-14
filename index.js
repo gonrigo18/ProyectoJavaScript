@@ -12,10 +12,10 @@ const container = document.querySelector(".container"),
 
 
     // cambio de formulario de login a formulario de registro
-    signUp.addEventListener("click", ( )=>{
+    signUp.addEventListener("click", ()=>{
         container.classList.add("active");
     });
-    login.addEventListener("click", ( )=>{
+    login.addEventListener("click", ()=>{
         container.classList.remove("active");
     });
 
@@ -52,3 +52,5 @@ const container = document.querySelector(".container"),
             document.getElementById('mensaje1').innerText = "Los campos usuario y contraseña no pueden estar vacios";
         }
 })
+
+
