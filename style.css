@@ -247,11 +247,29 @@ form>div {
     display: none;color:Red;
     font-size: 13px;
 }
+#errorbtc1 {
+    display: none;color:Red;
+    font-size: 13px;
+}
 #erroreth {
+    display: none;color:Red;
+    font-size: 13px;
+}
+#erroreth1 {
     display: none;color:Red;
     font-size: 13px;
 }
 #errorusdt {
     display: none;color:Red;
     font-size: 13px;
+}
+#errorusdt1 {
+    display: none;color:Red;
+    font-size: 13px;
+}
+.banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
