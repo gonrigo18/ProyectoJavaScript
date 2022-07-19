@@ -1,22 +1,15 @@
-let  btc = 19000 , eth = 1100 , usdt = 0.99;
-let monto = 0, saldo = 0, saldoBtc = 0, saldoEth = 0; saldoUsdt=0, btcInvested = 0, ethInvested = 0, usdtInvested = 0;
-let transacciones = 0, totalAccount = 0;
-const id ="", usuario = "", contrasena ="";
-let registredUsers = 0;
-const userList = [];
 const container = document.querySelector(".container"),
     pwShowHide = document.querySelectorAll(".showHidePw"),
     pwFields = document.querySelectorAll(".password"),
     signUp = document.querySelector(".signup-link"),
     login = document.querySelector(".login-link");
 
-
     // cambio de formulario de login a formulario de registro
-    signUp.addEventListener("click", ()=>{
-        container.classList.add("active");
-    });
     login.addEventListener("click", ()=>{
         container.classList.remove("active");
+    });
+    signUp.addEventListener("click", ()=>{
+        container.classList.add("active");
     });
 
     // Registrar usuario
