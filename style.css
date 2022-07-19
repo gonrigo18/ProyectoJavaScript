@@ -273,3 +273,12 @@ form>div {
     align-items: center;
     justify-content: space-evenly;
 }
+.saldo{
+    color: red;
+}
+body header .cerrar a{
+    color: black;
+}
+body header .cerrar a:hover{
+    color: red;
+}
