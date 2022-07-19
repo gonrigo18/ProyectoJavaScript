@@ -37,7 +37,7 @@ const container = document.querySelector(".container"),
         let loginPassword = document.getElementById('loginPassword').value;
         if ((loginAccount !== "") && (loginPassword !== "")){
             if (loginAccount in localStorage){
-                (loginPassword == localStorage.getItem(loginAccount)) ? location.href = "./operar.html" : document.getElementById('mensaje1').innerText = "Contraseña incorrecta"
+                (loginPassword == localStorage.getItem(loginAccount)) ? location.href = "../operar.html" : document.getElementById('mensaje1').innerText = "Contraseña incorrecta"
                 }else{
                     document.getElementById('mensaje1').innerText = "Usuario no encontrado, por favor registrese";
         }
